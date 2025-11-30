@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srustika Mohapatra - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        .tech-stack {
+            font-size: 1.1em;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            animation: fadeInUp 0.8s ease-out 0.3s backwards;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.4s backwards;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #667eea;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #667eea;
+        }
+
+        .content {
+            background: white;
+            max-width: 1200px;
+            margin: -50px auto 0;
+            padding: 60px 40px;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #667eea;
+        }
+
+        .about-text {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .projects {
+            display: grid;
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 4px solid #667eea;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.4em;
+        }
+
+        .project-tech {
+            color: #888;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .skill-tag {
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: transform 0.3s;
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.05);
+        }
+
+        .education-item {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .education-item h3 {
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .education-item p {
+            color: #666;
+            margin: 5px 0;
+        }
+
+        .contact-info {
+            font-size: 1.1em;
+            line-height: 2;
+            color: #555;
+        }
+
+        .contact-info a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            
+            .subtitle {
+                font-size: 1.1em;
+            }
+
+            .tech-stack {
+                font-size: 1em;
+            }
+
+            .nav-links a {
+                margin-left: 15px;
+                font-size: 0.9em;
+            }
+
+            .content {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">SM</div>
+            <div class="nav-links">
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+                <a href="resume.html">Resume</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Srustika Mohapatra</h1>
+        <p class="subtitle">Final-year B.Tech student — Electronics & Telecommunication</p>
+        <p class="tech-stack">Full-stack dev: React • FastAPI • MongoDB • Python</p>
+        <div class="cta-buttons">
+            <a href="resume.html" class="btn btn-primary">View Resume</a>
+            <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+        </div>
+    </section>
+
+    <div class="content">
+        <section class="section" id="about">
+            <h2>About</h2>
+            <p class="about-text">
+                I build web apps and data tools. I created a File Management System for East Coast Railway using React, FastAPI and MongoDB, 
+                interned at BSNL and NALCO, and enjoy building practical projects that solve real problems.
+            </p>
+        </section>
+
+        <section class="section" id="projects">
+            <h2>Selected Projects</h2>
+            <div class="projects">
+                <div class="project-card">
+                    <h3>File Management System</h3>
+                    <p class="project-tech">React • FastAPI • MongoDB</p>
+                    <p>Developed for East Coast Railway with secure authentication, file upload functionality, and notices management. 
+                    Streamlined document handling and retrieval processes with optimized database queries.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Amazon Clone</h3>
+                    <p class="project-tech">Django • HTML • CSS</p>
+                    <p>E-commerce platform with product listings, shopping cart functionality, and cart handling features.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Parking Assistance App</h3>
+                    <p class="project-tech">Concept Prototype</p>
+                    <p>Designed a prototype system for assigning empty parking slots with real-time alerts and notifications.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Face Recognition System</h3>
+                    <p class="project-tech">Python • Deep Learning</p>
+                    <p>Built an innovative face recognition system achieving high accuracy in detection and recognition tasks, 
+                    with integrated real-time webcam functionality.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="skills">
+            <h2>Key Skills</h2>
+            <div class="skills">
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">FastAPI</span>
+                <span class="skill-tag">MongoDB</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Django</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">MySQL</span>
+                <span class="skill-tag">Power BI</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">DSA</span>
+            </div>
+        </section>
+
+        <section class="section" id="education">
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>B.Tech — Electronics & Telecommunication</h3>
+                <p>Indira Gandhi Institute of Technology (IGIT), Sarang</p>
+                <p><strong>Batch 2025</strong> • Currently in Final Year</p>
+            </div>
+            <div class="education-item">
+                <h3>Higher Secondary</h3>
+                <p>St. Xavier's High School, Khandagiri</p>
+                <p><strong>2018 - 2020</strong></p>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <p><strong>Email:</strong> <a href="mailto:srustikamohapatra840@gmail.com">srustikamohapatra840@gmail.com</a></p>
+                <p><strong>Location:</strong> Bhubaneswar, Odisha, India</p>
+                <p><strong>GitHub:</strong> <a href="https://github.com/Srustika-18" target="_blank">github.com/Srustika-18</a></p>
+                <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/srustikamohapatra" target="_blank">linkedin.com/in/srustikamohapatra</a></p>
+                <p><strong>Phone:</strong> +91 76090 55635</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>Made with ♥ by Srustika Mohapatra • &copy; 2025</p>
+    </footer>
+</body>
+</html>

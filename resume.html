@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting to Resume...</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .loader {
+            text-align: center;
+            color: white;
+        }
+
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        h2 {
+            font-size: 1.5em;
+            font-weight: 400;
+        }
+
+        .manual-link {
+            margin-top: 30px;
+            font-size: 0.9em;
+        }
+
+        .manual-link a {
+            color: white;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="loader">
+        <div class="spinner"></div>
+        <h2>Redirecting to resume...</h2>
+        <div class="manual-link">
+            If you're not redirected, <a href="#" id="manualLink">click here</a>
+        </div>
+    </div>
+
+    <script>
+        // ==========================================
+        // UPDATE THIS LINK TO CHANGE YOUR RESUME
+        // ==========================================
+        const RESUME_LINK = 'https://drive.google.com/file/d/YOUR_FILE_ID/view';
+        
+        // Set the manual link
+        document.getElementById('manualLink').href = RESUME_LINK;
+        
+        // Automatic redirect - happens immediately
+        window.location.replace(RESUME_LINK);
+    </script>
+</body>
+</html>
